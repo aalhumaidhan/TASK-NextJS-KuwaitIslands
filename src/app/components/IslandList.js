@@ -1,15 +1,13 @@
-"use client"
+"use client";
 
 import Island from "./Island";
 
-function IslandList({ islands }) {
-  const islandCards = islands.map((island) => <Island key={island.id} island={island} />);
+function IslandList({ islands, handleIsland }) {
+  const islandCards = islands.map((island) => (
+    <Island key={island.id} island={island} handleIsland={handleIsland} />
+  ));
 
-  return (
-
-    <div className="islandList">{islandCards}</div>
-
-  );
+  return <div className="islandList">{islandCards}</div>;
 }
 
-export default IslandList
+export default IslandList;
